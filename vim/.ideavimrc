@@ -4,37 +4,59 @@
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
-
-" Do incremental searching.
-set incsearch
-
-set hlsearch
-
-set ignorecase
-
-set smartcase
-
-" Show relative line numbers
+" General
+set scrolloff=10
 set relativenumber
-set number
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
+set showmode
+set showcmd
+set visualbell
 
 let mapleader = ","
-nnoremap <leader>f :action Find<CR>
 
-nnoremap <leader>cc :action CommentByLineComment<CR>
+" Search improvements
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Plugins
+set surround
+set highlightedyank
+set nerdtree
+
+"" Key mappings
+"" ==========================
+inoremap jk <Esc>
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>\
+
+" Jump between methods
+nnoremap [[ <Action>(MethodUp)
+nnoremap ]] <Action>(MethodDown)
+
+
+
+"" Leader commands
+"" ==========================
+nnoremap <leader>f :action Find<CR>
+nnoremap <leader>c :action CommentByLineComment<CR>
 nnoremap <leader>r :action ReformatCode<CR>
 
 nnoremap <leader>sv :vsplit<CR>
 nnoremap <leader>sh :split<CR>
 
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+
+" Move lines up and down
 nmap md :m +1<CR>
 nmap mu :m -2<CR>
 
+" Remove search highlights
 nmap <leader>/: nohlsearch<CR>
+
+" File navigation
+map <leader>gf <action>(GotoFile)
+
