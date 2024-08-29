@@ -55,7 +55,7 @@ nmap md :m +1<CR>
 nmap mu :m -2<CR>
 
 " Remove search highlights
-nmap <leader>/: nohlsearch<CR>
+nmap <leader>/ :nohlsearch<CR>
 
 " File navigation
 map <leader>gf <action>(GotoFile)
