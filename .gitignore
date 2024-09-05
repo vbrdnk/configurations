@@ -1,2 +1,5 @@
 .idea
 .DS_Store
+
+# Ignore old zsh configuration files
+old.zshrc
